@@ -35,6 +35,7 @@ Matrix hes_upd(Function f, Matrix& B, Vector& x_cur, Vector& x_prv) {
 		for (int j = 0; j < n; j++)
 			res[i][j] = B[i][j] - ro*A[i][j];
 	A = out_pr(s, s);
+	ro = 1.0 / dot(y, s);
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < n; j++)
 			res[i][j] += ro*A[i][j];
