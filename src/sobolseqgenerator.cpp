@@ -49,10 +49,10 @@
 
 #include "sobolseqgenerator.h"
 
-int SobolSeqGenerator::Init(uint32_t _N, uint32_t _D, std::string dir_file){
+int SobolSeqGenerator::Init(uint32_t N_, uint32_t D_, std::string dir_file){
     int i,j,k;
-    N = _N;
-    D = _D;
+    N = N_;
+    D = D_;
     current_point_number = -1;
 
     std::ifstream infile(dir_file,std::ios::in);
@@ -79,9 +79,9 @@ int SobolSeqGenerator::Init(uint32_t _N, uint32_t _D, std::string dir_file){
         std::vector<unsigned> m;
         m.push_back(1);
         for (j = 1; j <= s; j++){
-            unsigned _m;
-            infile >> _m;
-            m.push_back(_m);
+            unsigned m_;
+            infile >> m_;
+            m.push_back(m_);
         }
 
         // Compute direction numbers
